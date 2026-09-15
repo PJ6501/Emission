@@ -199,6 +199,4 @@ The public repository is:
 ## Contact
 
 **Peng Jiang**  
-Department of Industrial Engineering and Management  
-Sichuan University  
 Email: pengjiang@scu.edu.cn
