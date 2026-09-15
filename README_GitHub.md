@@ -1,18 +1,12 @@
-# Life-cycle carbon emission estimates and mitigation priorities for large language models
+# This repository contains the code, source data, editable figure files, and summary materials supporting the manuscript
 
-This repository contains the code, source data, editable figure files, and reviewer-oriented summary materials supporting the manuscript:
-
-> **Life-cycle carbon emission estimates and mitigation priorities for large language models**  
-> Peng Jiang, Delong Du, and Fengqi You
-
-The analysis estimates carbon emissions across seven life-cycle phases of large language models (LLMs): research and development, hardware manufacturing, commercial logistics, training and fine-tuning, online chatbot services, idle consumption, and end-of-life. It covers 294 LLMs with publicly documented training-compute information, compares model portfolios and producer-attributed regions, projects alternative trajectories through 2050, and evaluates mitigation priorities through sensitivity and parameter–phase analyses.
 
 ## Repository contents
 
 ```text
 .
 ├── README.md
-├── Reviewer_Data_and_Code_Summary.xlsx
+├── Data_and_Code_Summary.xlsx
 ├── code/
 │   ├── Fig1.m
 │   ├── Fig2a.m
@@ -49,13 +43,13 @@ The analysis estimates carbon emissions across seven life-cycle phases of large 
     ├── Source Data Fig.5a.xlsx
     ├── Source Data Fig.6a.xlsx
     ├── Source Data Fig.6b.xlsx
-    ├── Source Data Supplementary Fig.2.xlsx
+    ├── Source Data SupplementaryFig.2.xlsx
     ├── Source Data SupplementaryFig.4a.xlsx
     ├── Source Data SupplementaryFig.4b.xlsx
     └── Source Data for 294 LLMs.xlsx
 ```
 
-`Reviewer_Data_and_Code_Summary.xlsx` consolidates the repository inventory, figure-to-file map, principal numerical results, source data, code requirements, integrity hashes, and quality-control notes in one reviewer-friendly workbook.
+`Data_and_Code_Summary.xlsx` consolidates the repository inventory, figure-to-file map, principal numerical results, source data, code requirements, integrity hashes, and quality-control notes in one workbook.
 
 ## Quick start
 
@@ -102,7 +96,6 @@ run('SupplementaryFig4a.m')
 run('SupplementaryFig4b.m')
 ```
 
-Several MATLAB scripts display figures but do not contain an export command. Export those figures manually or add an `exportgraphics` command using the desired file name and resolution.
 
 ## Figure and table reproduction map
 
@@ -185,21 +178,21 @@ The scripts read parameter–phase matrices and divide the supplied t CO₂-eq v
 
 ## Reproducibility and quality-control notes
 
-The repository was inspected for file completeness, cross-file consistency, and executable Python syntax. The reviewer summary workbook contains a detailed `QA_Log` sheet. The following version-specific points should be noted:
+The repository was inspected for file completeness, cross-file consistency, and executable Python syntax. The summary workbook contains a detailed `QA_Log` sheet. The following version-specific points should be noted:
 
 1. **Relative paths.** Run scripts from `code/`; otherwise, input workbooks may not be found and outputs may be written to an unexpected directory.
 2. **Fixed submission cutoff.** `Fig2a.m` uses `datetime('today')` as the y-axis endpoint. To reproduce a figure fixed at the manuscript cutoff, replace that expression with a fixed date such as `datetime(2025,12,31)`.
 3. **Pre-2020 model.** The full model dataset includes one model released in 2019 (AlphaStar). `Fig2a.m` intentionally filters observations before 2020.
-4. **Embedded versus workbook data.** Several scripts embed data directly. For data reuse, the source-data workbooks should be treated as the full-precision reviewer-facing records.
-5. **Regional-share labels.** In the supplied `Source Data Fig.2b.xlsx`, the phase labels in the first column are offset by one row. `Reviewer_Data_and_Code_Summary.xlsx` transparently re-aligns the unchanged numerical values to the seven-phase order used in `Fig2b.m`.
+4. **Embedded versus workbook data.** Several scripts embed data directly. For data reuse, the source-data workbooks should be treated as the full-precision records.
+5. **Regional-share labels.** In the supplied `Source Data Fig.2b.xlsx`, the phase labels in the first column are offset by one row. `Data_and_Code_Summary.xlsx` transparently re-aligns the unchanged numerical values to the seven-phase order used in `Fig2b.m`.
 6. **Supplementary Fig. 4b unit label.** `code/SupplementaryFig4b.xlsx` labels the vector as `visit(billion)`, whereas the MATLAB axis and source-data workbook use **million visits**. The summary workbook uses million visits.
 7. **Fig. 3a transition row.** `Fig3a.py` writes zero for the initial December 2025 row in its generated differenced workbook because it is the transition baseline. The source-data workbook retains the observed December 2025 value. The generated and supplied projection values match from January 2026 onward.
 8. **Software-specific outputs.** The MATLAB scripts that lack explicit export commands generate display figures only. The Visio and PowerPoint files are editable artwork rather than programmatically generated outputs.
 9. **Third-party data.** The repository compiles data from public databases, papers, technical reports, and websites cited in the manuscript and Supplementary Information. Reuse of third-party data remains subject to the original providers' terms.
 
-## Reviewer summary workbook
+## Summary workbook
 
-`Reviewer_Data_and_Code_Summary.xlsx` contains:
+`Data_and_Code_Summary.xlsx` contains:
 
 - an overview dashboard and key numerical results;
 - a complete repository inventory with SHA-256 hashes;
@@ -218,14 +211,6 @@ The workbook is intended as a navigation and verification aid. The individual fi
 The public repository is:
 
 <https://github.com/PJ6501/Emission>
-
-Please cite the associated manuscript when using these data or methods. A temporary citation for the review period is:
-
-> Jiang, P., Du, D. & You, F. *Life-cycle carbon emission estimates and mitigation priorities for large language models*. Manuscript under review.
-
-## License
-
-No license file was included in the supplied repository materials. Before public release, please add the intended license and confirm that it is compatible with the terms of all third-party data sources. A common approach is to license original code under a permissive software license and original compiled data under an appropriate open-data license.
 
 ## Contact
 
