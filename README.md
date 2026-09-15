@@ -46,7 +46,7 @@
     ├── Source Data SupplementaryFig.2.xlsx
     ├── Source Data SupplementaryFig.4a.xlsx
     ├── Source Data SupplementaryFig.4b.xlsx
-    └── Source Data for 294 LLMs.xlsx
+    └── Source Data for 294 models.xlsx
 ```
 
 `Data_and_Code_Summary.xlsx` consolidates the repository inventory, figure-to-file map, principal numerical results, source data, and code requirements.
@@ -122,7 +122,7 @@ run('SupplementaryFig4b.m')
 
 ## Main source datasets
 
-### `Source Data for 294 LLMs.xlsx`
+### `Source Data for 294 models.xlsx`
 
 This is the core model-level dataset. It contains:
 
@@ -157,14 +157,14 @@ The script:
 1. constructs a cumulative monthly computing-demand series;
 2. fits a cubic trend;
 3. fits a first-order autoregressive process to residuals;
-4. applies scenario-specific tipping points at the end of 2028, 2030, and 2032;
+4. applies scenario-specific tipping points;
 5. updates post-tipping monthly demand using a rolling 12-month mean;
 6. runs 30 deterministic Monte Carlo trials using seeds 0–29; and
 7. reports mean paths and 5th–95th percentile simulation intervals.
 
 ### Online-visit projection (`Fig3b.py`)
 
-The script uses Prophet to decompose the monthly visit series into trend and annual-seasonal components. It then applies a staged growth pattern and scenario factors of 1.000, 1.229, and 1.458. Thirty seeded simulations are used to construct the reported mean trajectories and percentile intervals.
+The script uses Prophet to decompose the monthly visit series into trend and annual-seasonal components. It then applies a staged growth pattern and scenario factors. Thirty seeded simulations are used to construct the reported mean trajectories and percentile intervals.
 
 ### Emission trajectories (`Fig4a.py` and `SupplementaryFig2.py`)
 
