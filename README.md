@@ -49,7 +49,7 @@
     └── Source Data for 294 models.xlsx
 ```
 
-`Data_and_Code_Summary.xlsx` consolidates the repository inventory, figure-to-file map, principal numerical results, source data, and code requirements.
+`Data_and_Code_Summary.xlsx` consolidates the repository inventory, figure-to-file map, principal numerical results, source data samples, and code requirements.
 
 ## Quick start
 
@@ -134,8 +134,6 @@ This is the core model-level dataset. It contains:
 | `Training compute (FLOPs)` | Publicly documented training-compute estimate |
 | `Country/Region` | Producer-attributed country or region |
 
-The 294 models span 30 October 2019 to 31 December 2025. The training-compute distribution is highly right-skewed; the top 100 models account for approximately 95.34% of total documented computing demand.
-
 ### Figure-specific source files
 
 The files named `Source Data Fig.*.xlsx` contain the numerical values plotted in the corresponding main figures. The supplementary source files provide the annual nine-scenario series and the Pareto distributions.
@@ -151,42 +149,21 @@ Important unit conventions are:
 ## Method-specific code notes
 
 ### Computing-power demand projection (`Fig3a.py`)
-
-The script:
-
-1. constructs a cumulative monthly computing-demand series;
-2. fits a cubic trend;
-3. fits a first-order autoregressive process to residuals;
-4. applies scenario-specific tipping points;
-5. updates post-tipping monthly demand using a rolling 12-month mean;
-6. runs 30 deterministic Monte Carlo trials using seeds 0–29; and
-7. reports mean paths and 5th–95th percentile simulation intervals.
-
 ### Online-visit projection (`Fig3b.py`)
-
-The script uses Prophet to decompose the monthly visit series into trend and annual-seasonal components. It then applies a staged growth pattern and scenario factors. Thirty seeded simulations are used to construct the reported mean trajectories and percentile intervals.
-
 ### Emission trajectories (`Fig4a.py` and `SupplementaryFig2.py`)
-
-Both scripts read the same annual nine-scenario workbook. `Fig4a.py` cumulatively sums annual emissions, while `SupplementaryFig2.py` plots annual values directly.
-
 ### Chord diagrams (`Fig6a.py` and `Fig6b.py`)
-
-The scripts read parameter–phase matrices and divide the supplied t CO₂-eq values by \(10^6\) before plotting them in Mt CO₂-eq.
-
 
 ## Summary workbook
 
 `Data_and_Code_Summary.xlsx` contains:
 
-- an overview dashboard and key numerical results;
 - a complete repository inventory with SHA-256 hashes;
 - a figure/table reproduction map;
-- the 294-model dataset;
+- Python/MATLAB requirements;
+- the 294-model info dataset;
 - consolidated source data for main and supplementary figures;
-- normalized sensitivity calculations;
-- curve-fitting and holdout-test data; and
-- Python/MATLAB requirements.
+- normalized sensitivity calculations; and
+- curve-fitting and holdout-test data.
 
 The workbook is intended as a navigation and verification aid. The individual files in `source data/` remain the figure-specific source records.
 
@@ -195,8 +172,3 @@ The workbook is intended as a navigation and verification aid. The individual fi
 The public repository is:
 
 <https://github.com/PJ6501/Emission>
-
-## Contact
-
-**Peng Jiang**  
-Email: pengjiang@scu.edu.cn
