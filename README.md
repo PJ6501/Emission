@@ -17,7 +17,7 @@
 │   ├── Fig3b.py
 │   ├── Fig4a.py
 │   ├── Fig4a.xlsx
-│   ├── Fig4b\_4c.m
+│   ├── Fig4b_4c.m
 │   ├── Fig5a.m
 │   ├── Fig5b.py
 │   ├── Fig5b.xlsx
@@ -40,7 +40,7 @@
     ├── Source Data Fig.3a.xlsx
     ├── Source Data Fig.3b.xlsx
     ├── Source Data Fig.4a.xlsx
-    ├── Source Data Fig.4b\_4c.xlsx
+    ├── Source Data Fig.4b_4c.xlsx
     ├── Source Data Fig.5a.xlsx
     ├── Source Data Fig.5b.xlsx
     ├── Source Data Fig.5c.xlsx
@@ -50,7 +50,7 @@
     └── Source Data SupplementaryFig.2b.xlsx
 ```
 
-`Data\_and\_Code\_Summary.xlsx` consolidates the repository inventory, figure-to-file map, principal numerical results, source data samples, and code requirements.
+`Data_and_Code_Summary.xlsx` consolidates the repository inventory, figure-to-file map, principal numerical results, source data samples, and code requirements.
 
 ## Quick start
 
@@ -160,7 +160,7 @@ Important unit conventions are:
 
 ## Summary workbook
 
-`Data\_and\_Code\_Summary.xlsx` contains:
+`Data_and_Code_Summary.xlsx` contains:
 
 * a complete repository inventory;
 * a figure/table reproduction map;
