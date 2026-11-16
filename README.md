@@ -1,6 +1,6 @@
 # This repository contains the code, source data, editable figure files, and summary materials supporting the manuscript
 
-
+As the Editor suggested change "Article" to "Short Communication", kindly please see the new file for all updated data and codes for the Short Communication.
 
 ## Repository contents
 
